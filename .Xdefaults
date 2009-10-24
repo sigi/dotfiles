@@ -1,0 +1,30 @@
+URxvt.background:      black
+URxvt.foreground:      grey80
+! as suggested in urxvt(7)
+URxvt.color7:          grey80
+URxvt.colorBD:         white
+URxvt.cursorColor:     red
+URxvt.font:            xft:Andale Mono:pixelsize=13
+URxvt.boldFont:        xft:Andale Mono:pixelsize=13
+URxvt.italicFont:      xft:Andale Mono:pixelsize=13:italic
+URxvt.boldItalicFont:  xft:Andale Mono:pixelsize=13:italic
+URxvt.intensityStyles: True
+URxvt.urgentOnBell:    True
+URxvt.utmpInhibit:     True
+! style of scrollbar
+URxvt.scrollstyle:     plain
+URxvt.scrollBar_right: True
+! size of scrollback buffer in lines
+URxvt.saveLines:       4096
+! make <TAB> a wide 'character' (cut-able)
+URxvt.pastableTabs:    True
+! blank the mouse cursor on keypress
+URxvt.pointerBlank:    True
+
+! this will switch between fonts (<Meta>-<Ctrl>-{1,2})
+URxvt.keysym.M-C-1:    command:\033]50;xft:Clean\007
+URxvt.keysym.M-C-2:    command:\033]50;xft:Andale Mono:pixelsize=13\007
+
+! which Perl extensions to enable
+URxvt.perl-ext-common: default,tabbed
+

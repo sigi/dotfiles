@@ -1,0 +1,7 @@
+tmp/
+.VimballRecord
+doc/tags
+.netrwhist
+
+GetLatest/*
+!GetLatest/GetLatestVimScripts.dat

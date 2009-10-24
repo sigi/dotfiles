@@ -1,0 +1,340 @@
+" Enable 256 colors under X
+if $TERM == 'xterm' || $TERM == 'screen-256color-bce'
+  set t_Co=256
+endif
+
+" Enable syntax highlighting if we have colors
+if &t_Co > 2
+  syntax on
+endif
+
+" set a nice color scheme
+if &t_Co == 256 || has('gui_running')
+  colorscheme VibrantInkModified
+else
+" we use vividchalk for now in terminals until we fix VibrantInkModified
+  colorscheme vividchalk
+endif
+
+" settings for GVim (makes .gvimrc mostly redundant)
+if has('gui_running')
+    set guicursor+=a:blinkon0	" turn off cursor blinking
+    set guifont=Andale\ Mono\ 10
+    set guioptions-=t           " disable tear-off menus
+    set guioptions-=m           " disable all menus
+    set guioptions-=T           " disable toolbar
+endif
+
+set nocompatible    " Disable 'vi' compatibility mode
+
+set autoindent      " carry over indent level from current line
+set autoread        " re-read changed files automatically
+set backspace=indent,eol,start   " allow backspacing over everything
+set clipboard+=unnamed           " yank into system clipboard
+set dictionary+=/usr/share/dict/words
+set expandtab       " always insert spaces instead of tabs
+set helpheight=15   " height of the help window when opened
+set hidden          " allow hidden buffers
+set history=250     " keep 50 lines of command line history
+set incsearch       " do incremental searching
+set keymodel=startsel,stopsel    " change visual behavior
+set laststatus=2    " always display a statusline
+set pumheight=15    " maximum height of completion popups
+set scrolloff=3
+set selection=exclusive
+set shell=bash      " fish is not compatible, force bash
+set shiftwidth=4    " (auto)indent by that many
+set showbreak=▶     " wrap indicator in wrap mode
+set showcmd         " show incomplete commands
+set showmatch       " highlight matching bracket after inserting one
+set sidescroll=5    " horiz scrolls by 5 chars
+set sidescrolloff=5 " horiz keeps 5 chars to the right
+set smartindent     " indent smartly according to file type
+set smarttab        " soft tabs according to shiftwidth
+set statusline=(%n)\ %F%1*%m%*%r%h%w\ [%{&ff}]\ [%Y]\ %{GetGitBranch()}%=%l,%c%V\ [%p%%]
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+set tabstop=4       " a tab is considered 4 spaces wide
+set vb t_vb=        " disable all terminal bells
+set virtualedit=all " allows to move the cursor everywhere
+set ignorecase      " ignore case in / searches
+set smartcase       " ...but only if no capitals are in the search
+set shortmess=atI   " make status line messages short
+
+" these require genutils.vim
+" for shifting words around in space padded 'fields' in a line
+nnoremap <silent> <C-Space> :call genutils#ShiftWordInSpace(1)<CR>
+nnoremap <silent> <C-BS> :call genutils#ShiftWordInSpace(-1)<CR>
+nnoremap <silent> <leader>cw :call genutils#CenterWordInSpace()<CR>
+nnoremap <silent> <leader>va :call genutils#AlignWordWithWordInPreviousLine()<CR>
+
+" this will open a scratch buffer (requires 'scratch.vim')
+map <F12> <esc>:Scratch<cr>
+map <S-F12> <esc>:Sscratch<cr>
+
+" settings for git-vim
+let g:git_statusline_surroundings = "[]"
+let g:git_statusline_label = "Branch: "
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+inoremap <C-U> <C-G>u<C-U>
+
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+  set mouse=a
+endif
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd") && !exists("autocommands_loaded")
+  let autocommands_loaded = 1
+
+  " Enable file type detection and load indent settings
+  filetype plugin indent on
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth'
+  autocmd FileType text setlocal textwidth=75
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  " Also don't do it when the mark is in the first line, that is the default
+  " position when opening a file.
+  " Don't do it for git commit messages --sigi
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") && bufname("%") !~ "COMMIT_EDITMSG$" |
+    \   exe "normal! g`\"" |
+    \ endif
+
+  autocmd BufRead Rakefile set filetype=ruby
+
+  augroup END
+
+endif " has("autocmd")
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+if !exists(":DiffOrig")
+      command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+      \ | wincmd p | diffthis
+endif
+set encoding=utf-8
+set fileencoding=utf-8
+set number
+set softtabstop=2
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " backup files
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " swap files
+
+" Default browser
+command -bar -nargs=1 OpenURL :!opera <args> & 2> /dev/null
+
+
+" Set minium window size
+set wmh=0
+if bufwinnr(1)
+  map + <C-W>_
+  map - <C-W>=
+endif
+
+" Move between tabs
+" Note: tabnext = gt AND tabprevious = gT
+nnoremap <c-n> <esc>:tabnext<cr>
+nnoremap <c-p> <esc>:tabprevious<cr>
+nnoremap <silent> <C-`> :tabnew<CR>
+" tip 199 (comments) - Open actual buffer in a tab and then close
+nmap t% :tabedit %<CR>
+nmap td :tabclose<CR>
+
+
+" Paste from X clipboard to vim
+vnoremap <C-C> "+y
+noremap <C-V> <ESC>"+gP
+inoremap <C-V> <ESC>"+gPi
+
+
+" Follow help links with enter
+nmap <buffer> <CR> <C-]>
+" Back to previous help page with backspace
+nmap <buffer> <BS> <C-T>
+
+" Ommnicompletion for:
+"   javascript
+"   html
+"   css
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+
+
+"  move text and rehighlight -- vim tip_id=224
+"vnoremap > ><CR>gv
+"vnoremap < <<CR>gv
+
+set wildmode=longest:full,full
+set wildmenu
+" Tip 1386 [http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE]
+set completeopt=longest,menuone
+
+
+" Gist options
+"   * if you want to open browser after the post...
+"let g:gist_open_browser_after_post = 1
+"     # detect filetype if vim failed auto-detection.
+"let g:gist_detect_filetype = 1
+"let g:gist_browser_command = 'firefox %URL% &'
+
+
+" tip 908 -Quick generic option toggling http://vim.wikia.com/wiki/Quick_generic_option_toggling
+" Map key to toggle opt
+function MapToggle(key, opt)
+ let cmd = ':set '.a:opt.'! \| set '.a:opt."?\<CR>"
+ exec 'nnoremap '.a:key.' '.cmd
+ exec 'inoremap '.a:key." \<C-O>".cmd
+endfunction
+
+command -nargs=+ MapToggle call MapToggle(<f-args>)
+
+MapToggle <F2> paste
+MapToggle <F3> hlsearch
+MapToggle <F4> wrap
+MapToggle <F5> ignorecase
+MapToggle <F6> number
+
+" The following will make tabs and trailing spaces visible when requested(F10)
+set listchars=tab:»·,trail:⊔
+MapToggle <F10> list
+MapToggle <F11> scrollbind
+
+
+" Load NERD_tree
+map <F9> :NERDTreeToggle<CR>
+
+
+" Fuzzy Finder modified by Jamis Buck
+let g:fuzzy_ignore = "*.log,*.jpg,*.png,*.gif,*.swp,*.bak,*.tmp,*.zip,*.gz"
+let g:fuzzy_matching_limit = 40
+
+map <leader>t :FuzzyFinderTextMate<CR>
+map <leader>b :FuzzyFinderBuffer<CR>
+map <leader>f :FuzzyFinderFile<CR>
+
+" ACK integration
+set grepprg=ack
+set grepformat=%f:%l:%m
+
+" Find searched_string in directories(...)
+function RailsGrep(searched_string,...)
+  let s:dir_list = ''
+  for dir in a:000
+    let s:dir_list = s:dir_list . dir
+  endfor
+  execute "silent! grep --ruby " . a:searched_string . " " . s:dir_list
+  botright cw
+  redraw!
+endfunction
+" Find searched_string in all project(app and lib directories)
+:command -nargs=+ Rgrep call RailsGrep('<q-args>',"app/ lib/ config/initializers vendor/plugins")
+" Find  definition in the project(models,controllers,helpers and lib)
+:command -nargs=1 Rgrepdef call RailsGrep("'def .*" . <q-args> . "'","app/models app/controllers app/helpers lib/ config/initializers vendor/plugins")
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Add the contents of this file to your ~/.vimrc file
+"
+"
+" Crucial setting, set to the dir in which your ruby projects reside
+
+let base_dir = "/home/sigi/project/rails/" . expand("%")
+
+" Central additions (also add the functions below)
+
+:command RTlist call CtagAdder("app/models","app/controllers","app/views","public", "config", "lib")
+
+map <F7> :RTlist<CR>
+
+" Optional, handy TagList settings
+
+:nnoremap <silent> <F8> :Tlist<CR>
+
+let Tlist_Ctags_Cmd = "/usr/bin/ctags-exuberant"
+let Tlist_Compact_Format = 1
+let Tlist_File_Fold_Auto_Close = 1
+let Tlist_Process_File_Always = 1
+
+let Tlist_Use_Right_Window = 1
+let Tlist_Exit_OnlyWindow = 1
+
+let Tlist_WinWidth = 35
+
+let Tlist_Highlight_Tag = 1
+
+let Tlist_Sort_Type = 'name'
+
+
+" Function that gets the dirtrees for the provided dirs and feeds
+" them to the TlAddAddFiles function below
+
+func CtagAdder(...)
+  let curdir = getcwd()
+  let index = 1
+  let s:dir_list = ''
+  while index <= a:0
+    let s:dir_list = s:dir_list . TlGetDirs(a:{index})
+    let index = index + 1
+  endwhile
+  call TlAddAddFiles(s:dir_list)
+  wincmd p
+  exec "normal ="
+  wincmd p
+  exec "cd " . curdir
+endfunc
+
+" Adds *.rb, *.rhtml and *.css files to TagList from a given list
+" of dirs
+
+func TlAddAddFiles(dir_list)
+  let dirlist = a:dir_list
+  let s:olddir = getcwd()
+  while strlen(dirlist) > 0
+    let curdir = substitute (dirlist, '|.*', "", "")
+    let dirlist = substitute (dirlist, '[^|]*|\?', "", "")
+    exec "cd " . g:base_dir
+    exec "TlistAddFiles " . curdir . "/*.rb"
+    exec "TlistAddFiles " . curdir . "/*.rhtml"
+    exec "TlistAddFiles " . curdir . "/*.erb"
+    exec "TlistAddFiles " . curdir . "/*.css"
+"    exec "TlistAddFiles " . curdir . "/*.js"
+  endwhile
+  exec "cd " . s:olddir
+endfunc
+
+" Gets all dirs within a given dir, returns them in a string,
+" separated by '|''s
+
+func TlGetDirs(start_dir)
+  let s:olddir = getcwd()
+  exec "cd " . g:base_dir . '/' . a:start_dir
+  let dirlist = a:start_dir . '|'
+  let dirlines = glob ('*')
+  let dirlines = substitute (dirlines, "\n", '/', "g")
+  while strlen(dirlines) > 0
+    let curdir = substitute (dirlines, '/.*', "", "")
+    let dirlines = substitute (dirlines, '[^/]*/\?', "", "")
+    if isdirectory(g:base_dir . '/' . a:start_dir . '/' . curdir)
+      let dirlist = dirlist . TlGetDirs(a:start_dir . '/' . curdir)
+    endif
+  endwhile
+  exec "cd " . s:olddir
+  return dirlist
+endfunc

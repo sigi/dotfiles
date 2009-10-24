@@ -1,0 +1,29 @@
+set mainfont {verdana 8}
+set textfont {{andale mono} 8}
+set uifont {verdana 8 bold}
+set tabstop 4
+set findmergefiles 0
+set maxgraphpct 50
+set maxwidth 16
+set cmitmode patch
+set wrapcomment none
+set autoselect 1
+set showneartags 1
+set showlocalchanges 1
+set datetimeformat {%Y-%m-%d %H:%M:%S}
+set limitdiffs 1
+set bgcolor white
+set fgcolor black
+set colors {green red blue magenta darkgrey brown orange}
+set diffcolors {red "#00a000" blue}
+set diffcontext 3
+set selectbgcolor gray85
+set extdifftool /usr/bin/meld
+set geometry(main) 1398x995+0+19
+set geometry(topwidth) 1394
+set geometry(topheight) 389
+set geometry(pwsash0) "929 2"
+set geometry(pwsash1) "1157 2"
+set geometry(botwidth) 790
+set geometry(botheight) 586
+set permviews {}

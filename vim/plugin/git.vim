@@ -1,0 +1,1 @@
+/home/sigi/personal/projects/git-vim/plugin/git.vim

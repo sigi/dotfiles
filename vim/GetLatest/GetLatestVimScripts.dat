@@ -1,0 +1,19 @@
+ScriptID SourceID Filename
+--------------------------
+1891 7341 vividchalk.vim
+1896 7356 :AutoInstall: allml.vim
+2386 9299 :AutoInstall: endwise.vim
+0 0 fuzzyfinder.vim
+0 0 fuzzyfinder_textmate.vim
+197 11399 :AutoInstall: genutils.vim
+642 8136 :AutoInstall: getscript.vim
+39 8196 :AutoInstall: matchit.zip
+171 3582 :AutoInstall: multvals.vim
+1218 10318 :AutoInstall: NERD_commenter.zip
+1658 11500 :AutoInstall: NERD_tree.zip
+1075 9816 :AutoInstall: netrw.vim
+1567 11481 :AutoInstall: rails.vim
+664 2050 :AutoInstall: scratch.vim
+2540 11006 :AutoInstall: snipMate.zip
+1697 8283 :AutoInstall: surround.vim
+1502 8743 :AutoInstall: vimball.vim
