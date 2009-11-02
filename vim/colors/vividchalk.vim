@@ -104,7 +104,8 @@ highlight StatusLineNC  guifg=#444444 guibg=#aaaaaa gui=none ctermfg=Black cterm
     "highlight StatusLine ctermbg=43
 "endif
 highlight WildMenu      guifg=Black   guibg=#ffff00 gui=bold ctermfg=Black ctermbg=Yellow cterm=bold
-highlight Cursor        guifg=Black guibg=White ctermfg=Black ctermbg=White
+highlight Cursor        guifg=Black guibg=Red ctermfg=Black ctermbg=White
+highlight iCursor       ctermbg=White ctermfg=Black
 highlight CursorLine    guibg=#333333 guifg=NONE
 highlight CursorColumn  guibg=#333333 guifg=NONE
 highlight NonText       guifg=#404040 ctermfg=8
