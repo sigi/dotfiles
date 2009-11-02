@@ -1,0 +1,2 @@
+alias info='info --vi-keys'
+alias diff=colordiff
