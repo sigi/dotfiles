@@ -1,0 +1,1 @@
+../../../lib/vim/vim-fugitive/doc/fugitive.txt
