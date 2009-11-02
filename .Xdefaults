@@ -4,10 +4,18 @@ URxvt.foreground:      grey80
 URxvt.color7:          grey80
 URxvt.colorBD:         white
 URxvt.cursorColor:     red
-URxvt.font:            xft:Andale Mono:pixelsize=13
-URxvt.boldFont:        xft:Andale Mono:pixelsize=13
-URxvt.italicFont:      xft:Andale Mono:pixelsize=13:italic
-URxvt.boldItalicFont:  xft:Andale Mono:pixelsize=13:italic
+!URxvt.font:            xft:Andale Mono:pixelsize=13
+!URxvt.boldFont:        xft:Andale Mono:pixelsize=13
+!URxvt.italicFont:      xft:Andale Mono:pixelsize=13:italic
+!URxvt.boldItalicFont:  xft:Andale Mono:pixelsize=13:italic
+!URxvt.font:            7x14
+!URxvt.boldFont:        7x14bold
+!URxvt.italicFont:      7x14
+!URxvt.boldItalicFont:  7x14bold
+URxvt.font:            -zevv-peep-medium-r-normal--16-140-75-75-c-80-iso8859-15
+URxvt.boldFont:        -zevv-peep-medium-r-normal--16-140-75-75-c-80-iso8859-15
+URxvt.italicFont:      -zevv-peep-medium-r-normal--16-140-75-75-c-80-iso8859-15
+URxvt.boldItalicFont:  -zevv-peep-medium-r-normal--16-140-75-75-c-80-iso8859-15
 URxvt.intensityStyles: True
 URxvt.urgentOnBell:    True
 URxvt.utmpInhibit:     True
@@ -28,3 +36,19 @@ URxvt.keysym.M-C-2:    command:\033]50;xft:Andale Mono:pixelsize=13\007
 ! which Perl extensions to enable
 URxvt.perl-ext-common: default,tabbed
 
+!!URxvt.color0:   #000000
+!URxvt.color1:   #DA4939
+!URxvt.color2:   #A5C261
+!URxvt.color3:   #A8A800
+!URxvt.color4:   #6D9CBE
+!!URxvt.color5:   #A800A8
+!!URxvt.color6:   #00A8A8
+!!URxvt.color7:   #A8A8A8
+!!URxvt.color8:   #000054
+!URxvt.color9:   #F2513F
+!URxvt.color10:  #BBDB6E
+!URxvt.color11:  #C2C200
+!URxvt.color12:  #7CB2D9
+!!URxvt.color13:  #FF00FF
+!!URxvt.color14:  #00FFFF
+!!URxvt.color15:  #FFFFFF

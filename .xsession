@@ -9,7 +9,10 @@ skype &
 claws-mail &
 keepassx &
 
+xset fp+ /home/sigi/.fonts
+xset fp rehash
+
 wmname LG3D
-#xkbcomp /home/sigi/.config/typematrix.xkb :0.0 2>/dev/null
+xkbcomp /home/sigi/.config/typematrix.xkb :0.0 2>/dev/null
 xrandr --output VGA-0 --right-of LVDS --auto
 exec awesome
