@@ -52,7 +52,7 @@ set sidescroll=5    " horiz scrolls by 5 chars
 set sidescrolloff=5 " horiz keeps 5 chars to the right
 set smartindent     " indent smartly according to file type
 set smarttab        " soft tabs according to shiftwidth
-set statusline=(%n)\ %F%1*%m%*%r%h%w\ [%{&ff}]\ [%Y]\ %{GetGitBranch()}%=%l,%c%V\ [%p%%]
+set statusline=(%n)\ %F%1*%m%*%r%h%w\ [%{&ff}]\ [%Y]\ %{fugitive#statusline()}%=%l,%c%V\ [%p%%]
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=4       " a tab is considered 4 spaces wide
 set vb t_vb=        " disable all terminal bells
@@ -73,8 +73,8 @@ map <F12> <esc>:Scratch<cr>
 map <S-F12> <esc>:Sscratch<cr>
 
 " settings for git-vim
-let g:git_statusline_surroundings = "[]"
-let g:git_statusline_label = "Branch: "
+"let g:git_statusline_surroundings = "[]"
+"let g:git_statusline_label = "Branch: "
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
