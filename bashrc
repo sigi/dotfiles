@@ -101,3 +101,7 @@ alias l='ls -CF'
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
+
+source /home/sigi/bin/cdargs-bash.sh
+source /home/sigi/bin/bash-functions.sh
+
