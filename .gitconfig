@@ -21,6 +21,7 @@
     br = branch
     co = checkout
     df = diff
+    wdf = diff --color-words
     lg = log -p
     idx = diff --cached
 [user]
@@ -28,3 +29,5 @@
     email = frank@luithle.net
 [push]
     default = tracking
+[merge]
+    tool = meld
