@@ -1,17 +1,19 @@
 #!/bin/bash
 xrandr --output VGA-0 --right-of LVDS --auto; sleep 2
-/usr/lib/gnome-settings-daemon/gnome-settings-daemon
-/usr/lib/gnome-session/helpers/gnome-settings-daemon-helper
+gnome-settings-daemon
+gnome-screensaver 2&>/dev/null
 ( sleep 30; exec system-config-printer-applet 2&>/dev/null ) &
-( gnome-keyring-daemon --start; sleep 5; nm-applet --sm-disable ) &
-( sleep 5; gnome-power-manager ) &
-( sleep 5; skype ) & 
-( sleep 5; claws-mail ) &
-( sleep 5; keepassx ) &
+( sleep 4; nm-applet ) &
+( sleep 4; gnome-power-manager ) &
+( sleep 4; skype ) &
+( sleep 4; claws-mail ) &
+( sleep 4; keepassx ) &
 
 xset fp+ /home/sigi/.fonts
 xset fp rehash
 
+xinput set-prop '"TPPS/2 IBM TrackPoint"' "Evdev Wheel Emulation Button" 2
+xinput set-prop '"TPPS/2 IBM TrackPoint"' "Evdev Wheel Emulation" 1
+
 wmname LG3D
-#xkbcomp /home/sigi/.config/typematrix.xkb :0.0 2>/dev/null
 exec awesome
