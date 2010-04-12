@@ -1,11 +1,13 @@
 --- 
 :benchmark: false
 :update_sources: true
-install: --env-shebang
 :verbose: true
 :backtrace: false
 :sources: 
-- http://gemcutter.org
-- http://gems.rubyforge.org/
+- http://rubygems.org
 :bulk_threshold: 1000
-update: --env-shebang
+install: --bindir /home/sigi/bin --wrappers --user-install --env-shebang
+uninstall: --bindir /home/sigi/bin --user-install --executables
+update: --bindir /home/sigi/bin --wrappers --user-install --env-shebang
+search: --remote
+server: --daemon --dir /home/sigi/.gem/ruby/1.8
