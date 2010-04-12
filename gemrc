@@ -6,8 +6,8 @@
 :sources: 
 - http://rubygems.org
 :bulk_threshold: 1000
-install: --bindir /home/sigi/bin --wrappers --user-install --env-shebang
-uninstall: --bindir /home/sigi/bin --user-install --executables
-update: --bindir /home/sigi/bin --wrappers --user-install --env-shebang
+install: --wrappers --user-install --env-shebang
+uninstall: --user-install --executables
+update: --wrappers --user-install --env-shebang
 search: --remote
 server: --daemon --dir /home/sigi/.gem/ruby/1.8

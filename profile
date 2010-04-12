@@ -24,6 +24,8 @@ if [ -d "$mybin" ] ; then
     PATH="$mybin:$PATH"
 fi
 
+PATH="$HOME/.gem/ruby/1.8/bin:$PATH"
+
 export VISUAL=vim
 export EDITOR=vim
 export MANWIDTH=75
