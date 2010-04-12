@@ -45,6 +45,7 @@ set scrolloff=3
 set selection=exclusive
 set shell=bash      " fish is not compatible, force bash
 set shiftwidth=4    " (auto)indent by that many
+set shiftround      " round >< indenting to mod-shiftwidth
 set showbreak=▶     " wrap indicator in wrap mode
 set showcmd         " show incomplete commands
 set showmatch       " highlight matching bracket after inserting one
@@ -59,7 +60,17 @@ set vb t_vb=        " disable all terminal bells
 set virtualedit=all " allows to move the cursor everywhere
 set ignorecase      " ignore case in / searches
 set smartcase       " ...but only if no capitals are in the search
-set shortmess=atI   " make status line messages short
+set shortmess+=aI   " make status line messages short
+set textwidth=80    " default, overridden for other filetypes
+"set eadirection=hor " make windows equal only for hor splits
+
+" bufferlist.vim
+map <silent> <F5> :call BufferList()<CR>
+"= OPTIONAL:                                                                   =
+"=     let g:BufferListWidth = 25                                              =
+"=     let g:BufferListMaxWidth = 50                                           =
+"=     hi BufferSelected term=reverse ctermfg=white ctermbg=red cterm=bold     =
+"=     hi BufferNormal term=NONE ctermfg=black ctermbg=darkcyan cterm=NONE     =
 
 " these require genutils.vim
 " for shifting words around in space padded 'fields' in a line
@@ -183,8 +194,9 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 "vnoremap > ><CR>gv
 "vnoremap < <<CR>gv
 
-set wildmode=longest:full,full
-set wildmenu
+set wildmode=longest,list,full
+"set wildmode=longest:full,full
+"set wildmenu
 " Tip 1386 [http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE]
 set completeopt=longest,menuone
 
@@ -210,7 +222,6 @@ command -nargs=+ MapToggle call MapToggle(<f-args>)
 MapToggle <F2> paste
 MapToggle <F3> hlsearch
 MapToggle <F4> wrap
-MapToggle <F5> ignorecase
 MapToggle <F6> number
 
 " The following will make tabs and trailing spaces visible when requested(F10)
@@ -229,7 +240,7 @@ let g:fuzzy_matching_limit = 40
 
 map <leader>t :FuzzyFinderTextMate<CR>
 map <leader>b :FuzzyFinderBuffer<CR>
-map <leader>f :FuzzyFinderFile<CR>
+map <leader>i :FuzzyFinderFile<CR>
 
 " ACK integration
 set grepprg=ack
@@ -339,3 +350,6 @@ func TlGetDirs(start_dir)
   exec "cd " . s:olddir
   return dirlist
 endfunc
+
+nnoremap <F5> :call Ri(expand('<cword>'))<cr>
+vnoremap <F5> "ry:call Ri(@r)<cr>
