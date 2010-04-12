@@ -17,4 +17,7 @@ ScriptID SourceID Filename
 2540 11006 :AutoInstall: snipMate.zip
 1697 12566 :AutoInstall: surround.vim
 1502 11981 :AutoInstall: vimball.vim
-2975 12387 :AutoInstall: fugitive.vim
+2975 12673 :AutoInstall: fugitive.vim
+1325 4544 :AutoInstall: bufferlist.vim
+1896 12338 :AutoInstall: ragtag.vim
+1868 7003 :AutoInstall: simplefold.vim
