@@ -1,0 +1,20 @@
+#!/bin/bash
+# Replacement for 'gnome-power-cmd' which was obsoleted
+
+case $1 in
+	suspend)
+		echo Suspending
+        dbus-send --print-reply --system --dest=org.freedesktop.UPower \
+            /org/freedesktop/UPower org.freedesktop.UPower.Suspend
+		;;
+	hibernate)
+		echo Hibernating
+        dbus-send --print-reply --system --dest=org.freedesktop.UPower \
+            /org/freedesktop/UPower org.freedesktop.UPower.Hibernate
+		;;
+	*)
+		echo Not supported command: '"'$1'"'
+		echo Usage: $0 '<suspend|hibernate>'
+		exit 1
+		;;
+esac

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+. $HOME/personal/secrets/backup_passphrase.sh
+lock
+duplicity --exclude /home/sigi/.VirtualBox /home/sigi ssh://abs-svn//var/home/sigi/backup
+vgaoff
+pmsusp

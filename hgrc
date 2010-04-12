@@ -1,0 +1,5 @@
+[extensions]
+hgext.bookmarks =
+hgext.convert =
+hggit = /home/sigi/lib/python/hg-git/hggit
+hgk =
