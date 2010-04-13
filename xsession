@@ -1,7 +1,7 @@
 #!/bin/bash
 
 gnome-settings-daemon
-xscreensaver -nosplash &
+xscreensaver &
 
 xrandr --output VGA-0 --right-of LVDS --auto; sleep 2
 
