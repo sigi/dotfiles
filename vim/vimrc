@@ -11,6 +11,10 @@ else
   colorscheme vividchalk
 endif
 
+if &t_Co > 2 || has('gui_running')
+    syntax on
+endif
+
 " settings for GVim (makes .gvimrc mostly redundant)
 if has('gui_running')
     set guicursor+=a:blinkon0	" turn off cursor blinking
@@ -20,7 +24,6 @@ if has('gui_running')
     set guioptions-=T           " disable toolbar
 else
     if &t_Co > 2
-        syntax on
         let &t_SI = "\<Esc>]12;orange\x7"
         let &t_EI = "\<Esc>]12;red\x7"
     endif
