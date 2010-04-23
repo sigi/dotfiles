@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="spell_languages" mtime="1256924261" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>en_US</stringvalue>
+		</li>
+	</entry>
+</gconf>

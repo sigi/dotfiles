@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="selected_tasks" mtime="1255358386" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>1255358386.8285.7@ybs</stringvalue>
+		</li>
+	</entry>
+	<entry name="primary_tasks" mtime="1255358386" type="string">
+		<stringvalue>1255358386.8285.7@ybs</stringvalue>
+	</entry>
+</gconf>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="cursor_blink" mtime="1255307433" type="bool" value="false"/>
+	<entry name="monospace_font_name" mtime="1256377448" type="string">
+		<stringvalue>Andale Mono 10</stringvalue>
+	</entry>
+	<entry name="document_font_name" mtime="1255306893" type="string">
+		<stringvalue>Verdana 8</stringvalue>
+	</entry>
+	<entry name="font_name" mtime="1255319472" type="string">
+		<stringvalue>Verdana 8</stringvalue>
+	</entry>
+	<entry name="menus_have_icons" mtime="1255304760" type="bool" value="true"/>
+	<entry name="can_change_accels" mtime="1255304756" type="bool" value="true"/>
+	<entry name="toolbar_style" mtime="1255304751" type="string">
+		<stringvalue>both</stringvalue>
+	</entry>
+	<entry name="icon_theme" mtime="1255315725" type="string">
+		<stringvalue>Tango</stringvalue>
+	</entry>
+	<entry name="gtk_theme" mtime="1255315712" type="string">
+		<stringvalue>Xfce-4.4</stringvalue>
+	</entry>
+</gconf>

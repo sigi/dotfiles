@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="selected_memos" mtime="1255358387" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>1255358387.8285.10@ybs</stringvalue>
+		</li>
+	</entry>
+	<entry name="primary_memos" mtime="1255358387" type="string">
+		<stringvalue>1255358387.8285.10@ybs</stringvalue>
+	</entry>
+</gconf>

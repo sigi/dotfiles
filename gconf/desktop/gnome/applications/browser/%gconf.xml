@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="exec" mtime="1255307618" type="string">
+		<stringvalue>firefox</stringvalue>
+	</entry>
+	<entry name="nremote" mtime="1255307618" type="bool" value="true"/>
+</gconf>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="check_custom_header" mtime="1256924261" type="bool" value="true"/>
+	<entry name="lookup_addressbook" mtime="1256924261" type="bool" value="false"/>
+</gconf>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="sidebar_visible" mtime="1256924277" type="bool" value="true"/>
+	<entry name="toolbar_visible" mtime="1256924277" type="bool" value="true"/>
+	<entry name="buttons_visible" mtime="1256924277" type="bool" value="true"/>
+	<entry name="buttons_style" mtime="1256924277" type="string">
+		<stringvalue>toolbar</stringvalue>
+	</entry>
+	<entry name="maximized" mtime="1256924131" type="bool" value="true"/>
+	<entry name="component_id" mtime="1256924131" type="string">
+		<stringvalue>mail</stringvalue>
+	</entry>
+</gconf>

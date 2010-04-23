@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="rgba_order" mtime="1255319112" type="string">
+		<stringvalue>rgb</stringvalue>
+	</entry>
+	<entry name="dpi" mtime="1255306047" type="float" value="100"/>
+	<entry name="hinting" mtime="1256936601" type="string">
+		<stringvalue>full</stringvalue>
+	</entry>
+	<entry name="antialiasing" mtime="1256936601" type="string">
+		<stringvalue>grayscale</stringvalue>
+	</entry>
+</gconf>

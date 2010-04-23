@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="download_prefix" mtime="1256333801" type="string">
+		<stringvalue>file:///home/sigi</stringvalue>
+	</entry>
+	<entry name="download_next_time" mtime="1257109841" type="int" value="1257113441"/>
+	<entry name="paned_position" mtime="1257109850" type="int" value="72"/>
+</gconf>

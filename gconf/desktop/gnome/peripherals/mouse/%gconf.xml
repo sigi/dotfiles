@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="cursor_size" mtime="1255315736" type="int" value="18"/>
+	<entry name="cursor_theme" mtime="1255315736" type="string">
+		<stringvalue>default</stringvalue>
+	</entry>
+</gconf>

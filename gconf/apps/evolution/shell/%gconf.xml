@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="start_offline" mtime="1256924278" type="bool" value="false"/>
+</gconf>

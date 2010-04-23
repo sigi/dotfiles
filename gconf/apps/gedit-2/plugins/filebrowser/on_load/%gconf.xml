@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="virtual_root" mtime="1257183453" type="string">
+		<stringvalue>file:///home/sigi/project/mgate/limoges_upgrade_vod/src/main/java/st/abs/mgate/dao/hibernate</stringvalue>
+	</entry>
+	<entry name="root" mtime="1257183453" type="string">
+		<stringvalue>file:///</stringvalue>
+	</entry>
+	<entry name="tree_view" mtime="1257183453" type="bool" value="true"/>
+</gconf>

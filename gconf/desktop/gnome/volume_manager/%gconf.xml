@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="autoscanner" mtime="1272034439" type="bool" value="false"/>
+	<entry name="autophoto" mtime="1272034435" type="bool" value="false"/>
+	<entry name="autoipod" mtime="1272034432" type="bool" value="false"/>
+	<entry name="autoplay_dvd" mtime="1272034430" type="bool" value="false"/>
+	<entry name="autoplay_cda" mtime="1272034426" type="bool" value="false"/>
+	<entry name="autobrowse" mtime="1272034416" type="bool" value="false"/>
+</gconf>

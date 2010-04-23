@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="password" mtime="1256180057" type="string">
+		<stringvalue>00lastfm</stringvalue>
+	</entry>
+	<entry name="username" mtime="1256336881" type="string">
+		<stringvalue>siggboy</stringvalue>
+	</entry>
+</gconf>
