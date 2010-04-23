@@ -1,6 +1,7 @@
 #!/bin/bash
 
 gnome-settings-daemon
+/usr/lib/gnome-volume-manager/gnome-volume-manager
 xscreensaver &
 
 xrandr --output VGA-0 --right-of LVDS --auto; sleep 2
@@ -11,7 +12,9 @@ xrandr --output VGA-0 --right-of LVDS --auto; sleep 2
 
 xset fp+ /home/sigi/.fonts; xset fp rehash
 
-xinput set-prop '"TPPS/2 IBM TrackPoint"' "Evdev Wheel Emulation Button" 2
-xinput set-prop '"TPPS/2 IBM TrackPoint"' "Evdev Wheel Emulation" 1
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
+
+gem server 2&>/dev/null
 
 wmname LG3D; exec awesome
