@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="use_xnest" mtime="1255310689" schema="/schemas/apps/fast-user-switch-applet/per-applet/use_xnest"/>
-	<entry name="lock_screen_after_switch" mtime="1255310689" schema="/schemas/apps/fast-user-switch-applet/per-applet/lock_screen_after_switch"/>
-	<entry name="display_style" mtime="1255310689" schema="/schemas/apps/fast-user-switch-applet/per-applet/display_style" type="string">
-		<stringvalue>icon</stringvalue>
-	</entry>
-	<entry name="suppress_logout_restart_shutdown" mtime="1255310689" schema="/schemas/apps/fast-user-switch-applet/per-applet/suppress_logout_restart_shutdown"/>
-</gconf>

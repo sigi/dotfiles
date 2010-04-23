@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="show_notifications" mtime="1256336853" type="bool" value="false"/>
-	<entry name="auto_proxy_complaint" mtime="1257109839" type="bool" value="false"/>
-</gconf>

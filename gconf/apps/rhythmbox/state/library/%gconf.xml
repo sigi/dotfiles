@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="paned_position" mtime="1257109850" type="int" value="180"/>
-	<entry name="show_browser" mtime="1257109895" type="bool" value="true"/>
-</gconf>

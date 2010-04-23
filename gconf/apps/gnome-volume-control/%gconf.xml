@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="active-element" mtime="1255502385" type="string">
-		<stringvalue>HDA Intel (Alsa mixer)</stringvalue>
-	</entry>
-</gconf>
