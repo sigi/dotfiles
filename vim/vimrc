@@ -356,3 +356,10 @@ endfunc
 
 nnoremap <F5> :call Ri(expand('<cword>'))<cr>
 vnoremap <F5> "ry:call Ri(@r)<cr>
+
+" VimTip 47
+" Smart swapping of chars, words, paragraphs
+:nnoremap <silent> gc xph
+:nnoremap <silent> gl "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
+:nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>
+:nnoremap g{ {dap}p{
