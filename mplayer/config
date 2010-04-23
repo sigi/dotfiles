@@ -3,3 +3,4 @@ vf=screenshot
 fontconfig=true
 stop-xscreensaver=true
 ao=alsa
+cache-min=3
