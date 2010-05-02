@@ -9,5 +9,5 @@ Leading whitespace	0	^[ \t\r\f\v]*
 Script comment	0	#.*</stringvalue>
 	</entry>
 	<entry name="window_size_y" mtime="1266246733" type="int" value="1028"/>
-	<entry name="window_size_x" mtime="1268169390" type="int" value="1396"/>
+	<entry name="window_size_x" mtime="1272510318" type="int" value="1396"/>
 </gconf>

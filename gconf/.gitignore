@@ -1,3 +1,6 @@
 # this is rather volatile:
 system/networking/connections/
 desktop/gnome/peripherals/
+apps/gnome-power-manager/
+apps/gnome-settings/
+apps/gnome_settings_daemon/

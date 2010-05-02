@@ -1,5 +1,15 @@
 <?xml version="1.0"?>
 <gconf>
+	<entry name="button_layout" mtime="1272309518" type="string">
+		<stringvalue>PROGRAMMING</stringvalue>
+	</entry>
+	<entry name="wordlen" mtime="1272309518" type="int" value="64"/>
+	<entry name="result_format" mtime="1272309518" type="string">
+		<stringvalue>decimal</stringvalue>
+	</entry>
+	<entry name="angle_units" mtime="1272309518" type="string">
+		<stringvalue>degrees</stringvalue>
+	</entry>
 	<entry name="yposition" mtime="1267191758" type="string">
 		<stringvalue>58</stringvalue>
 	</entry>
@@ -9,9 +19,7 @@
 	<entry name="showregisters" mtime="1267191753" type="string">
 		<stringvalue>false</stringvalue>
 	</entry>
-	<entry name="accuracy" mtime="1267191753" type="string">
-		<stringvalue>9</stringvalue>
-	</entry>
+	<entry name="accuracy" mtime="1272309518" type="int" value="9"/>
 	<entry name="base" mtime="1267191753" type="string">
 		<stringvalue>DEC</stringvalue>
 	</entry>

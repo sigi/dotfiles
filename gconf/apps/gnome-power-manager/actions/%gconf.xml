@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="critical_battery" mtime="1270956203" type="string">
-		<stringvalue>suspend</stringvalue>
-	</entry>
-</gconf>
