@@ -26,6 +26,11 @@ fi
 
 PATH="$HOME/.gem/ruby/1.8/bin:$PATH"
 
+# PATHs for Python virtual environments
+for p in $HOME/.python-virtualenv/*; do
+    PATH="$p/bin:$PATH"
+done
+
 export VISUAL=vim
 export EDITOR=vim
 export MANWIDTH=75
