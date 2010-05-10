@@ -39,4 +39,9 @@
 #	define_myclass broken
 #feed 3h http://proxyfeed.example.com/proxied.rss http_proxy=http://localhost:1234/
 #feed 3h http://dupsfeed.example.com/duplicated.rss allowduplicates=true
-feed 1d http://plasmasturm.org/feeds/plasmasturm/
+
+feed 3h http://plasmasturm.org/feeds/plasmasturm/
+feed 3h http://feeds.delicious.com/v2/rss/rtomayko?count=15
+feed 3h http://feeds.feedburner.com/RidingRails
+feed 3h http://feeds.feedburner.com/gilesbowkett
+feed 3h http://yehudakatz.com/rss
