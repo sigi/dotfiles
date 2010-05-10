@@ -78,7 +78,7 @@ h3 {
 .itemdescription {
 	border-top: 1px solid gray;
 	margin: 0;
-	padding: 0 0.7em;
+	padding: 0 0.9em;
     line-height: 1.35em;
 }
 #feedstatsheader {
@@ -110,3 +110,4 @@ h3 {
 }
 a {
     color: #008;
+}
