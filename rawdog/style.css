@@ -19,7 +19,8 @@ html {
 body {
 	color: black;
 	background-color: white;
-	margin: 0;
+    width: 800px;
+	margin: 0 auto;
 	padding: 10px;
 	font-size: medium;
 }
@@ -77,7 +78,8 @@ h3 {
 .itemdescription {
 	border-top: 1px solid gray;
 	margin: 0;
-	padding: 6px;
+	padding: 0 0.7em;
+    line-height: 1.35em;
 }
 #feedstatsheader {
 }
@@ -106,3 +108,5 @@ h3 {
 }
 #aboutrawdog {
 }
+a {
+    color: #008;
