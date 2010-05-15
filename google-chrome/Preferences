@@ -1,0 +1,299 @@
+{
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "bookmark_bar": {
+      "show_on_all_tabs": true
+   },
+   "browser": {
+      "ntp": {
+         "promo_image_remaining": 1,
+         "promo_line_remaining": 1
+      }
+   },
+   "content_settings_window": {
+      "last_tab_index": 5
+   },
+   "countryid_at_install": 21843,
+   "default_search_provider": {
+      "id": "2",
+      "name": "Google",
+      "prepopulate_id": "1",
+      "search_url": "{google:baseURL}search?{google:RLZ}{google:acceptedSuggestion}{google:originalQueryForSuggestion}sourceid=chrome&ie={inputEncoding}&q={searchTerms}",
+      "suggest_url": "{google:baseSuggestURL}search?client=chrome&hl={language}&q={searchTerms}"
+   },
+   "download": {
+      "default_directory": "/home/sigi/incoming",
+      "directory_upgrade": true,
+      "extensions_to_open": ""
+   },
+   "extensions": {
+      "autoupdate": {
+         "last_check": "12918387580408325",
+         "next_check": "12918405671857711"
+      },
+      "blacklistupdate": {
+         "lastpingday": "12918380400623308"
+      },
+      "chrome_url_overrides": {
+         "bookmarks": [ "chrome-extension://eemcgdkfndhakfknompkggombfjjjeno/main.html" ]
+      },
+      "settings": {
+         "aegfbpchoheaflicfmggkmlmcccpjpgd": {
+            "location": 1,
+            "manifest": {
+               "background_page": "background.html",
+               "icons": {
+                  "128": "url128.png",
+                  "16": "url16.png",
+                  "32": "url32.png",
+                  "64": "url64.png"
+               },
+               "id": "aegfbpchoheaflicfmggkmlmcccpjpgd",
+               "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDZYUglUgygvBbuUoaOGhsj1JOBol4q5yimQnpYQ+e+9bxInT5JLL1wwKnhKC1x3WxQYqcmPMQ/guTgJ0cO97sRQrvKBOjEBHQRxiVv183Pdc7xpWpTtLjlghE4zB0uC1ekiSQTciUvEE0Qf4pPppuQChb7Nt7lerXDV7hjdLCazwIDAQAB",
+               "name": "Text URL Linker",
+               "options_page": "options_page.html",
+               "permissions": [ "tabs", "http://*/", "https://*/" ],
+               "update_url": "http://clients2.google.com/service/update2/crx",
+               "version": "1.0.2"
+            },
+            "path": "aegfbpchoheaflicfmggkmlmcccpjpgd/1.0.2",
+            "state": 0
+         },
+         "chmimgmjdabgiilljdjfbonifbhiglao": {
+            "location": 1,
+            "manifest": {
+               "background_page": "background.html",
+               "browser_action": {
+                  "default_icon": "icon.png",
+                  "default_title": "AdBlock+",
+                  "icons": [ "icon.png" ],
+                  "name": "AdBlock+",
+                  "popup": "menu.html"
+               },
+               "content_scripts": [ {
+                  "all_frames": true,
+                  "js": [ "adblock.js" ],
+                  "matches": [ "http://*/*", "https://*/*" ],
+                  "run_at": "document_start"
+               } ],
+               "description": "AdBlock+ Element Hiding Helper port for Chrome.",
+               "icons": {
+                  "128": "icon128.png"
+               },
+               "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCPSPEDaXoDJxrCOAQXcf3UKQu9dBj2dImiOGiLWYLNPPOy4EmOWd++gLOIet2msUYTHK/IJXyeO8hAYR6MGschdiOU0bDPIMKIHz1a670GsYJzl7cGYgXwbW9C1VuaNUVM8hNip8grK1MVsW5lif1bI3AXl5gYFsNm0C+gj03m7wIDAQAB",
+               "name": "AdBlock+ Element Hiding Helper",
+               "options_page": "preferences.html",
+               "permissions": [ "tabs", "http://*/", "https://*/" ],
+               "update_url": "http://clients2.google.com/service/update2/crx",
+               "version": "1.1.9.18"
+            },
+            "path": "chmimgmjdabgiilljdjfbonifbhiglao/1.1.9.18",
+            "state": 0
+         },
+         "dbepggeogbaibhgnhhndojpepiihcmeb": {
+            "incognito": true,
+            "lastpingday": "12918380400643404",
+            "location": 1,
+            "manifest": {
+               "background_page": "background_page.html",
+               "content_scripts": [ {
+                  "js": [ "lib/keyboardUtils.js", "lib/clipboard.js", "linkHints.js", "vimiumFrontend.js" ],
+                  "matches": [ "http://*/*", "https://*/*" ],
+                  "run_at": "document_start"
+               } ],
+               "description": "The Hacker's Browser. Vimium provides keyboard shortcuts for navigation and control in the spirit of Vim.",
+               "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCavizCZ9EnBGbtcRmMErcaxD2WUHJ9ME8IYGQhUBlFgIvchJjAO8koyak3AM95dqu3sOLdtIYD+75T82V1Wl5fLnHAeij2/IWL2VViTHeZhXZl1+rD9sRDaEYd7aZetpJ29+XXfhVphKArCCfwbYCtoJhTIr6S6DYsXuRevoV0EwIDAQAB",
+               "name": "Vimium",
+               "options_page": "options.html",
+               "permissions": [ "tabs" ],
+               "update_url": "http://clients2.google.com/service/update2/crx",
+               "version": "1.17"
+            },
+            "path": "dbepggeogbaibhgnhhndojpepiihcmeb/1.17",
+            "state": 1
+         },
+         "hnfhcmjkebafbfikmbkhdpbmfpfjgiog": {
+            "lastpingday": "12918380400643404",
+            "location": 1,
+            "manifest": {
+               "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCndMu10pCnXVJNSCvmc8K0CXEZZ8DU2DNgt77nkTQ2flcGgmf4yCY5QAKHMv2K9mDos38iVIcUSxuUruIXdOuQIY5JZy7Bitb5WzHQ6UfWWqoc/tEpVYi/k/+8TvORflKfgbmNX2kxrbI7gxkaTssMLYrgbrlG3KlwI7k890T2KQIDAQAB",
+               "name": "Minimal",
+               "theme": {
+                  "colors": {
+                     "bookmark_text": [ 149, 149, 149 ],
+                     "frame": [ 255, 255, 255 ],
+                     "ntp_background": [ 255, 255, 255 ],
+                     "ntp_link": [ 170, 170, 170 ],
+                     "ntp_section": [ 235, 235, 235, 1 ],
+                     "ntp_section_link": [ 149, 149, 149 ],
+                     "ntp_section_text": [ 149, 149, 149 ],
+                     "ntp_text": [ 149, 149, 149 ],
+                     "tab_background_text": [ 149, 149, 149 ],
+                     "tab_text": [ 149, 149, 149 ],
+                     "toolbar": [ 255, 255, 255 ]
+                  },
+                  "images": {
+                     "theme_button_background": "i/agxjaHJvbWV0aGVtZXNyDAsSBEZpbGUYktsBDA",
+                     "theme_frame": "i/agxjaHJvbWV0aGVtZXNyDAsSBEZpbGUYoaQBDA",
+                     "theme_tab_background": "i/agxjaHJvbWV0aGVtZXNyDAsSBEZpbGUYmtMBDA",
+                     "theme_toolbar": "i/agxjaHJvbWV0aGVtZXNyDAsSBEZpbGUYltMBDA"
+                  },
+                  "tints": {
+                     "buttons": [ 0.001, 0, 0.706 ]
+                  }
+               },
+               "version": "1.0"
+            },
+            "path": "hnfhcmjkebafbfikmbkhdpbmfpfjgiog/1.0",
+            "state": 1
+         },
+         "iblijlcdoidgdpfknkckljiocdbnlagk": {
+            "lastpingday": "12918380400132525",
+            "location": 1,
+            "manifest": {
+               "background_page": "background.html",
+               "browser_action": {
+                  "default_icon": "icons/icon32x32.png",
+                  "default_title": "goo.gl URL Shortener",
+                  "popup": "popup.html"
+               },
+               "content_scripts": [ {
+                  "all_frames": true,
+                  "js": [ "scripts/content_script.js" ],
+                  "matches": [ "http://*/*", "https://*/*" ]
+               } ],
+               "description": "Shorten url with goo.gl, the new Google URL shortener.",
+               "icons": {
+                  "128": "icons/icon128x128.png",
+                  "16": "icons/icon16x16.png",
+                  "32": "icons/icon32x32.png",
+                  "48": "icons/icon48x48.png"
+               },
+               "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCYxbDjRCmwT+PwDWa5PhMGhgwk1NiurWZDx0IMxU3UHF9DAd0XphnK2hBgugv0Ex3gJMP+L3WlQwxQSr/b3eXG3ko5BkrolG2nb9TozzpLy5O3oOCnACSsqEfaMphQSRJaKVyySMDZsvbiT+1IJBGrjwZaq8u2IDtlUMryNns30wIDAQAB",
+               "name": "goo.gl URL Shortener",
+               "options_page": "options.html",
+               "permissions": [ "tabs", "http://goo.gl/" ],
+               "update_url": "http://clients2.google.com/service/update2/crx",
+               "version": "0.4.4"
+            },
+            "path": "iblijlcdoidgdpfknkckljiocdbnlagk/0.4.4",
+            "state": 1
+         },
+         "milkhonmecplandlkfbjplfbdenjlkmp": {
+            "location": 1,
+            "manifest": {
+               "background_page": "bg.html",
+               "description": "An online ad-removal tool for your favorite web browser.",
+               "icons": {
+                  "128": "icons/icon128.png",
+                  "16": "icons/icon16.png",
+                  "32": "icons/icon32.png",
+                  "48": "icons/icon48.png"
+               },
+               "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDLdAXHhyHss4wsWpgoPVEWOFSE5b9Z85CW3wuNgdE/x63fGHRmXQyCGXbE8rILjyeMezdDvkMHeWUNYyOKwFgj786OdJV2tqjjWJfRD0p4A6Q7WFbe4A/qhcQsTE8ImB/+7xaOV5rqqcanlTUPyTfX4b8VxJpeME+/GOgPNSg4hwIDAQAB",
+               "name": "AdSweep",
+               "page_action": {
+                  "default_icon": "icons/icon32.png",
+                  "default_title": "AdSweep",
+                  "popup": "popup.html"
+               },
+               "permissions": [ "http://*/*", "tabs" ],
+               "update_url": "http://clients2.google.com/service/update2/crx",
+               "version": "2.1.6"
+            },
+            "path": "milkhonmecplandlkfbjplfbdenjlkmp/2.1.6",
+            "state": 0
+         },
+         "pdfbjinabdohnegjnbfgdgohlhegamnm": {
+            "lastpingday": "12918380400132525",
+            "location": 1,
+            "manifest": {
+               "background_page": "background.html",
+               "content_scripts": [ {
+                  "all_frames": true,
+                  "js": [ "js/jquery-1.3.2.min.js", "js/usercontent.js" ],
+                  "matches": [ "http://*/*", "https://*/*" ],
+                  "run_at": "document_start"
+               } ],
+               "description": "Apply a user stylesheet and or script to pages",
+               "icons": {
+                  "128": "icons/128.png",
+                  "32": "icons/32.png",
+                  "48": "icons/48.png",
+                  "64": "icons/64.png"
+               },
+               "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQD2fKgxbJQyfsHo0wEBFARcW+f3/Sa4KnsKjst0TasRtyXklTyM/Me4fxbBMncXbk3ZqaFuCvHdqGSPv3Lhye6DZjFor8cxb+vYB3xYDJK1abeVUy3uswf+ZwlQ/7cy3920AVg4gq6JKjgeCd8H2iPQS+Tf9NG2/QvkQo+Mg2yOtQIDAQAB",
+               "name": "userScriptCSS",
+               "options_page": "options.html",
+               "permissions": [ "http://*/*", "https://*/*" ],
+               "update_url": "http://clients2.google.com/service/update2/crx",
+               "version": "1.4"
+            },
+            "path": "pdfbjinabdohnegjnbfgdgohlhegamnm/1.4",
+            "state": 1
+         }
+      },
+      "theme": {
+         "id": "hnfhcmjkebafbfikmbkhdpbmfpfjgiog",
+         "pack": "/home/sigi/.config/google-chrome/Default/Extensions/hnfhcmjkebafbfikmbkhdpbmfpfjgiog/1.0/Cached Theme.pak",
+         "use_system": false
+      },
+      "toolbar": [ "iblijlcdoidgdpfknkckljiocdbnlagk" ],
+      "toolbarsize": -1,
+      "ui": {
+         "developer_mode": false
+      }
+   },
+   "homepage": "http://www.mozilla.org/",
+   "homepage_is_newtabpage": true,
+   "intl": {
+      "charset_default": "UTF-8"
+   },
+   "ntp": {
+      "pref_version": 1,
+      "shown_sections": 29,
+      "tips_cache": {
+         "current_tip": 17,
+         "tips": [ "Control Google Chrome from the command line: run \u003Cspan class=\"code\"\u003Eman google-chrome\u003C/span\u003E in a terminal.", "Middle-click the new tab button to open a URL from the clipboard.", "Click and hold down the back button to see your browsing history.", "Customize Google Chrome with themes! Check out designs at the \u003Ca href=\"https://tools.google.com/chrome/intl/en/themes/index.html\" target=\"_blank\"\u003EThemes Gallery\u003C/a\u003E.", "Customize Google Chrome with themes! Check out special artist themes at the \u003Ca href=\"https://tools.google.com/chrome/intl/en/themes/index.html\" target=\"_blank\"\u003EThemes Gallery\u003C/a\u003E.\n", "Get the latest Google Chrome news at the \u003Ca href=\"http://chrome.blogspot.com\"\u003EGoogle Chrome blog\u003C/a\u003E.", "Have your tabs arranged your way. Click a tab and drag it to a new position along the top of the browser window. Learn more about \u003Ca href=\"http://www.google.com/support/chrome/bin/answer.py?answer=95622&ctx=tips\"\u003Earranging tabs\u003C/a\u003E.", "Press \u003Cstrong\u003ECtrl+T\u003C/strong\u003E to open a new tab. Learn more \u003Ca href=\"http://www.google.com/support/chrome/bin/answer.py?answer=95743&ctx=tip\"\u003Ekeyboard shortcuts\u003C/a\u003E.", "To search a specific site, start typing the site's web address in the address bar and press \u003Cstrong\u003ETab\u003C/strong\u003E when prompted. Learn more \u003Ca href=\"http://www.google.com/support/chrome/bin/answer.py?answer=95655&ctx=tip\"\u003Esearch tips\u003C/a\u003E.", "Want to quickly search the page you're viewing? Press \u003Cstrong\u003ECtrl+F\u003C/strong\u003E to open the find bar. Learn more about \u003Ca href=\"http://www.google.com/support/chrome/bin/answer.py?answer=95635&ctx=tip\"\u003Eusing the find bar\u003C/a\u003E.\n", "Press \u003Cstrong\u003ECtrl+S\u003C/strong\u003E to save your current webpage. Learn more \u003Ca href=\"http://www.google.com/support/chrome/bin/answer.py?answer=95743&ctx=tip\"\u003Ekeyboard shortcuts\u003C/a\u003E.", "Click a tab and drag it out of the tab strip to open it in a new window. Learn more about \u003Ca href=\"http://www.google.com/support/chrome/bin/answer.py?answer=95622&ctx=tips\"\u003Eusing tabs\u003C/a\u003E. \n", "Press \u003Cstrong\u003ECtrl+Shift+N\u003C/strong\u003E to open a new window in incognito mode. Pages you visit while in incognito mode aren't stored in your browsing history. \u003Ca href=\"http://www.google.com/support/chrome/bin/answer.py?answer=95464&ctx=tip\"\u003ELearn more\u003C/a\u003E", "Press \u003Cstrong\u003ECtrl+O\u003C/strong\u003E to open a file in the browser. Learn more \u003Ca href=\"http://www.google.com/support/chrome/bin/answer.py?answer=95743&ctx=tip\"\u003Ekeyboard shortcuts\u003C/a\u003E.", "Press \u003Cstrong\u003EF11\u003C/strong\u003E to go full screen. Learn more \u003Ca href=\"http://www.google.com/support/chrome/bin/answer.py?answer=95743&ctx=tip\"\u003Ekeyboard shortcuts\u003C/a\u003E.", "Click the star next to the address bar to bookmark the page you're viewing. Learn more \u003Ca href=\"http://www.google.com/support/chrome/bin/answer.py?answer=95739&ctx=tip\"\u003Ebookmarking tricks\u003C/a\u003E.\n", "Want to hide thumbnails on the New Tab page? Click the thumbnails icon at the top of the page. Learn more about \u003Ca href=\"http://www.google.com/support/chrome/bin/answer.py?answer=95451&ctx=tip\"\u003Ecustomizing the New Tab page\u003C/a\u003E.", "Press \u003Cstrong\u003ECtrl+Shift+T\u003C/strong\u003E repeatedly to reopen the last 10 tabs you closed. Learn more \u003Ca href=\"http://www.google.com/support/chrome/bin/answer.py?answer=95743&ctx=tip\"\u003Ekeyboard shortcuts\u003C/a\u003E.", "Don't want to leave traces of your browsing history? Browse in incognito mode. \u003Ca href=\"http://www.google.com/support/chrome/bin/answer.py?answer=95464&ctx=tip\"\u003ELearn more\u003C/a\u003E", "Accidentally closed a window full of tabs? Find it again in the \u003Cstrong\u003ERecently closed\u003C/strong\u003E section of the New Tab page.", "Don't see a home button next to the address bar? Learn how to \u003Ca href=\"http://www.google.com/support/chrome/bin/answer.py?answer=95314&ctx=tip\"\u003Eadd one\u003C/a\u003E to get easy access to your home page.", "Search directly from the address bar. Learn more \u003Ca href=\"http://www.google.com/support/chrome/bin/answer.py?answer=95655&ctx=tip\"\u003Esearch tips\u003C/a\u003E.\n", "Press \u003Cstrong\u003ECtrl+B\u003C/strong\u003E to dock (or undock) your bookmarks bar under the address bar. Learn more \u003Ca href=\"http://www.google.com/support/chrome/bin/answer.py?answer=95743&ctx=tip\"\u003Ekeyboard shortcuts\u003C/a\u003E.", "Press \u003Cstrong\u003EF6\u003C/strong\u003E to quickly place your cursor in the address bar. Learn more \u003Ca href=\"http://www.google.com/support/chrome/bin/answer.py?answer=95743&ctx=tip\"\u003Ekeyboard shortcuts\u003C/a\u003E." ],
+         "topic_id": "25688"
+      },
+      "tips_cache_update": "1273911324.950407",
+      "tips_server": "https://clients2.google.com/tools/service/npredir?r=chrometips_linux&hl=en-US"
+   },
+   "profile": {
+      "block_third_party_cookies": true,
+      "clear_site_data_on_exit": false,
+      "content_settings": {
+         "pref_version": 1
+      },
+      "exited_cleanly": true
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "session": {
+      "restore_on_startup": 1
+   },
+   "sync": {
+      "bookmarks": true,
+      "preferences": true,
+      "themes": true
+   },
+   "translate": {
+      "enabled": false
+   },
+   "translate_language_blacklist": [ "de" ],
+   "webkit": {
+      "webprefs": {
+         "default_fixed_font_size": 14,
+         "default_font_size": 14,
+         "fixed_font_family": "Andale Mono",
+         "inspector_settings": "frontendSettings:string:{\"event-listeners-filter\":\"all\",\"color-format\":\"hex\",\"resources-large-rows\":true,\"watch-expressions\":[],\"show-inherited-computed-style-properties\":false,\"show-user-agent-styles\":true,\"resource-view-tab\":\"content\",\"console-history\":[\"$\"]}\nlastActivePanel:string:console\n",
+         "minimum_font_size": 11,
+         "minimum_logical_font_size": 11,
+         "sansserif_font_family": "Verdana",
+         "serif_font_family": "Times New Roman"
+      }
+   }
+}
