@@ -4,3 +4,12 @@ desktop/gnome/peripherals/
 apps/gnome-power-manager/
 apps/gnome-settings/
 apps/gnome_settings_daemon/
+apps/gcalctool/
+apps/gnumeric/plugins/
+apps/gnumeric/printsetup/
+apps/meld/
+apps/nm-applet/
+desktop/gnome/applications/terminal/
+desktop/gnome/background/
+desktop/gnome/font_rendering/
+desktop/gnome/url-handlers/http/

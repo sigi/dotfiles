@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="exec" mtime="1255307627" type="string">
-		<stringvalue>rxvt</stringvalue>
-	</entry>
-</gconf>
