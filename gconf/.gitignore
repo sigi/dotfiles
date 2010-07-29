@@ -13,3 +13,6 @@ desktop/gnome/applications/terminal/
 desktop/gnome/background/
 desktop/gnome/font_rendering/
 desktop/gnome/url-handlers/http/
+apps/metacity/
+apps/gksu/
+desktop/gnome/remote_access/
