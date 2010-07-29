@@ -21,3 +21,5 @@ ScriptID SourceID Filename
 1325 4544 :AutoInstall: bufferlist.vim
 1896 12338 :AutoInstall: ragtag.vim
 1868 7003 :AutoInstall: simplefold.vim
+1242 10630 :AutoInstall: mkd.vim
+273 7701 :AutoInstall: taglist.vim
