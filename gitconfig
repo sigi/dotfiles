@@ -1,33 +1,36 @@
 [apply]
-    whitespace = nowarn
+  whitespace = nowarn
 [color]
-    ui = auto
+  ui = auto
 [color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
+  current = yellow reverse
+  local   = yellow
+  remote  = green
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
+  meta = yellow bold
+  frag = magenta bold
+  old  = red bold
+  new  = green bold
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+  added     = yellow
+  changed   = green
+  untracked = cyan
 [alias]
-    st = status
-    ci = commit
-    br = branch
-    co = checkout
-    df = diff
-    wdf = diff --color-words
-    lg = log -p
-    idx = diff --cached
+  st  = status
+  ci  = commit -v
+  br  = branch
+  co  = checkout
+  wdf = diff --color-words
+  lp  = log -p
+  idx = diff --cached
+  au  = add -u
+  dt  = describe --tags
 [user]
-    name = Frank Luithle
-    email = frank@luithle.net
+  name = Frank Luithle
+  email = f.luithle@mgate.tv
 [push]
-    default = tracking
+  default = tracking
 [merge]
-    tool = meld
+  tool = meld
+[gui]
+  fontdiff = -family fixed -size 10 -weight normal -slant roman -underline 0 -overstrike 0
