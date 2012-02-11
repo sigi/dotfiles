@@ -4,36 +4,9 @@
 # see /usr/share/doc/bash/examples/startup-files for examples.
 # the files are located in the bash-doc package.
 
-# the default umask is set in /etc/profile
-#umask 022
-
-prefix=$HOME
-mybin=$prefix/bin
-mylib=$prefix/lib
-
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+    if [ -f ".bashrc" ]; then
+        . ".bashrc"
     fi
 fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$mybin" ] ; then
-    PATH="$mybin:$PATH"
-fi
-
-PATH="$HOME/.gem/ruby/1.8/bin:$PATH"
-
-# PATHs for Python virtual environments
-for p in $HOME/.python-virtualenv/*; do
-    PATH="$p/bin:$PATH"
-done
-
-export VISUAL=vim
-export EDITOR=vim
-export MANWIDTH=75
-
-# Java
-export JAVA_HOME="/usr/lib/jvm/java-6-sun"
