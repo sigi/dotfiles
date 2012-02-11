@@ -1,12 +1,12 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.10 for sigi on Wed Apr 14 00:41:21 2010.
+# Written by xscreensaver-demo 5.11 for sigi on Mon Apr 11 18:47:43 2011.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
 cycle:		0:02:00
 lock:		True
 lockTimeout:	0:00:00
-passwdTimeout:	0:00:30
+passwdTimeout:	0:00:15
 visualID:	default
 installColormap:    True
 verbose:	False
