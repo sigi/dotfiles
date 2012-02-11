@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'ap'
+
 # Just for Rails...
 if rails_env = ENV['RAILS_ENV'] && !defined?(JRUBY_VERSION)
   # Called after the irb session is initialized and Rails has
