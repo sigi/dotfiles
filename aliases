@@ -1,2 +1,11 @@
-alias info='info --vi-keys'
+# Git
+gitcmd="hub"
+alias g=$gitcmd
+alias git=$gitcmd
+alias gs="$gitcmd status"
+alias gd="$gitcmd diff"
+alias gl="$gitcmd log"
+alias gk="gitk --all"
+alias showenv="env | sort | less"
+
 alias diff=colordiff
