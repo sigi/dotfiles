@@ -1,3 +1,5 @@
+[core]
+  excludesfile = ~/.cvsignore
 [apply]
   whitespace = nowarn
 [color]
