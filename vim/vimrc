@@ -1,5 +1,5 @@
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect() " Enable the pathogen plugin
 
 " Enable 256 colors under X
 if $TERM == 'xterm' || $TERM == 'screen-256color-bce'
