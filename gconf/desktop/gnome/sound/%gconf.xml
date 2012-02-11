@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="event_sounds" mtime="1255502368" type="bool" value="false"/>
-	<entry name="default_mixer_device" mtime="1255307523" type="string">
-		<stringvalue>alsamixer:hw:0</stringvalue>
-	</entry>
-</gconf>

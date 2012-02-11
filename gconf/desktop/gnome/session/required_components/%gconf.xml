@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="panel" mtime="1255313793" type="string">
-		<stringvalue>gnome-panel</stringvalue>
-	</entry>
-	<entry name="windowmanager" mtime="1255304217" type="string">
-		<stringvalue>awesome</stringvalue>
-	</entry>
-</gconf>
