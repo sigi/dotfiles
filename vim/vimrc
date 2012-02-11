@@ -1,3 +1,6 @@
+filetype off
+call pathogen#runtime_append_all_bundles()
+
 " Enable 256 colors under X
 if $TERM == 'xterm' || $TERM == 'screen-256color-bce'
   set t_Co=256
@@ -47,7 +50,7 @@ set pumheight=15    " maximum height of completion popups
 set scrolloff=3
 set selection=exclusive
 set shell=bash      " fish is not compatible, force bash
-set shiftwidth=4    " (auto)indent by that many
+set shiftwidth=2    " (auto)indent by that many
 set softtabstop=4
 set shiftround      " round >< indenting to mod-shiftwidth
 set showbreak=▶     " wrap indicator in wrap mode
@@ -68,7 +71,10 @@ set shortmess+=aI   " make status line messages short
 set textwidth=80    " default, overridden for other filetypes
 set encoding=utf-8
 set fileencoding=utf-8
+set modelines=0
 "set eadirection=hor " make windows equal only for hor splits
+
+let mapleader=","
 
 " bufferlist.vim
 map <silent> <F5> :call BufferList()<CR>
@@ -143,8 +149,8 @@ if !exists(":DiffOrig")
       command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
       \ | wincmd p | diffthis
 endif
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " backup files
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " swap files
+set backupdir=~/.cache/vim,~/.tmp,~/tmp,/var/tmp,/tmp " backup files
+set directory=~/.cache/vim,~/.tmp,~/tmp,/var/tmp,/tmp " swap files
 
 " Default browser
 command -bar -nargs=1 OpenURL :!opera <args> & 2> /dev/null
@@ -361,3 +367,11 @@ vnoremap <F5> "ry:call Ri(@r)<cr>
 :nnoremap <silent> gl "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
 :nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>
 :nnoremap g{ {dap}p{
+
+" Tabularize mappings
+  nmap <leader>a= :Tabularize /=<CR>
+  vmap <leader>a= :Tabularize /=<CR>
+  nmap <leader>a> :Tabularize /=><CR>
+  vmap <leader>a> :Tabularize /=><CR>
+  nmap <leader>a: :Tabularize /:\zs<CR>
+  vmap <leader>a: :Tabularize /:\zs<CR>

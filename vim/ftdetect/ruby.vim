@@ -17,7 +17,7 @@ au BufNewFile,BufRead .irbrc,irbrc			set filetype=ruby
 au BufNewFile,BufRead *.ru				set filetype=ruby
 
 " Capistrano
-au BufNewFile,BufRead Capfile				set filetype=ruby
+au BufNewFile,BufRead Capfile,Vagrantfile				set filetype=ruby
 
 " Bundler
 au BufNewFile,BufRead Gemfile				set filetype=ruby

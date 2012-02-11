@@ -6,20 +6,23 @@ ScriptID SourceID Filename
 0 0 fuzzyfinder.vim
 0 0 fuzzyfinder_textmate.vim
 197 11399 :AutoInstall: genutils.vim
-642 8136 :AutoInstall: getscript.vim
+642 15781 :AutoInstall: getscript.vim
 39 8196 :AutoInstall: matchit.zip
 171 3582 :AutoInstall: multvals.vim
-1218 10318 :AutoInstall: NERD_commenter.zip
+1218 14455 :AutoInstall: NERD_commenter.zip
 1658 11834 :AutoInstall: NERD_tree.zip
-1075 11979 :AutoInstall: netrw.vim
-1567 12622 :AutoInstall: rails.vim
+1075 15782 :AutoInstall: netrw.vim
+1567 13800 :AutoInstall: rails.vim
 664 2050 :AutoInstall: scratch.vim
 2540 11006 :AutoInstall: snipMate.zip
 1697 12566 :AutoInstall: surround.vim
-1502 11981 :AutoInstall: vimball.vim
-2975 12673 :AutoInstall: fugitive.vim
+1502 15362 :AutoInstall: vimball.vim
+2975 15542 :AutoInstall: fugitive.vim
 1325 4544 :AutoInstall: bufferlist.vim
 1896 12338 :AutoInstall: ragtag.vim
 1868 7003 :AutoInstall: simplefold.vim
 1242 10630 :AutoInstall: mkd.vim
 273 7701 :AutoInstall: taglist.vim
+1590 12570 :AutoInstall: unimpaired.vim
+2136 8206 :AutoInstall: repeat.vim
+541 1839 :AutoInstall: velocity.vim
