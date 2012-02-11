@@ -1,0 +1,24 @@
+PATH="$PATH:/sbin:/usr/sbin"
+
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+PATH="$PATH:$HOME/opt/node/bin"
+
+export VISUAL="vim"
+export EDITOR="vim"
+export MANWIDTH=75
+
+# Java
+export JAVA_HOME="/usr/lib/jvm/java-6-sun"
+
+# Git Bash prompt (the "__git_ps1" function defined with completions)
+export GIT_PS1_SHOWDIRTYSTATE="true"
+export GIT_PS1_SHOWSTASHSTATE="true"
+export GIT_PS1_SHOWUNTRACKEDFILES="true"
+
+# Various dh_make related settings
+DEBEMAIL="f.luithle@mgate.tv"
+DEBFULLNAME="Frank Luithle"
+export DEBEMAIL DEBFULLNAME PATH
