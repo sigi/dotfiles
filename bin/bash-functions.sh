@@ -14,15 +14,26 @@ function lock ()
 
 function vgaoff ()
 {
-    xrandr --output VGA-0 --off
+    xrandr --output DFP1 --off
 }
 
 function vgaon ()
 {
-    xrandr --output VGA-0 --right-of LVDS --auto
+    xrandr --output DFP1 --right-of LVDS --auto
 }
 
 function pmsusp ()
 {
     gnome-power-cmd suspend 2&>/dev/null
 }
+
+function rvm_prompt ()
+{
+  if [ -n "$rvm_bin_path" ]; then
+    rvm_prompt_output=`$rvm_bin_path/rvm-prompt i v p g`
+    if [ -n "$rvm_prompt_output" ]; then
+      printf "[%s] " $rvm_prompt_output
+    fi
+  fi
+}
+
