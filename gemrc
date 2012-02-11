@@ -6,8 +6,9 @@
 :sources: 
 - http://rubygems.org
 :bulk_threshold: 1000
-install: --wrappers --user-install --env-shebang
-uninstall: --user-install --executables
-update: --wrappers --user-install --env-shebang
+install: --wrappers --env-shebang --no-ri --no-rdoc
+uninstall: --executables
+update: --wrappers --env-shebang --no-ri --no-rdoc
 search: --remote
-server: --daemon --dir /home/sigi/.gem/ruby/1.8
+server: --daemon  
+# rdoc: --inline-source --line-numbers --format=html --template=hanna
