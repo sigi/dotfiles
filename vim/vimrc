@@ -1,5 +1,39 @@
+set nocompatible
 filetype off
-call pathogen#infect() " Enable the pathogen plugin
+
+" Setup Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+" Vundle setup finished
+
+" Now setup all the plugins/bundles
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'godlygeek/tabular'
+Bundle 'sigi/vim-vividchalk'
+Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-endwise'
+Bundle 'vim-scripts/matchit.zip'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-rails'                
+Bundle 'vim-scripts/scratch.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-repeat'
+Bundle 'rodjek/vim-puppet'
+Bundle 'scrooloose/syntastic'
+Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'tpope/vim-haml'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'spiiph/vim-space'
+
+filetype plugin indent on
 
 " Enable 256 colors under X
 if $TERM == 'xterm' || $TERM == 'screen-256color-bce'
@@ -31,8 +65,6 @@ else
         let &t_EI = "\<Esc>]12;red\x7"
     endif
 endif
-
-set nocompatible    " Disable 'vi' compatibility mode
 
 set autoindent      " carry over indent level from current line
 set autoread        " re-read changed files automatically
@@ -73,31 +105,20 @@ set encoding=utf-8
 set fileencoding=utf-8
 set modelines=0
 "set eadirection=hor " make windows equal only for hor splits
+set backupdir=~/.cache/vim,~/.tmp,~/tmp,/var/tmp,/tmp " backup files
+set directory=~/.cache/vim,~/.tmp,~/tmp,/var/tmp,/tmp " swap files
+set wildmode=longest,list,full
+set completeopt=longest,menuone
+set listchars=tab:»·,trail:⊔
+" ACK integration
+set grepprg=ack-grep
+set grepformat=%f:%l:%m
 
 let mapleader=","
-
-" bufferlist.vim
-map <silent> <F5> :call BufferList()<CR>
-"= OPTIONAL:                                                                   =
-"=     let g:BufferListWidth = 25                                              =
-"=     let g:BufferListMaxWidth = 50                                           =
-"=     hi BufferSelected term=reverse ctermfg=white ctermbg=red cterm=bold     =
-"=     hi BufferNormal term=NONE ctermfg=black ctermbg=darkcyan cterm=NONE     =
-
-" these require genutils.vim
-" for shifting words around in space padded 'fields' in a line
-nnoremap <silent> <C-Space> :call genutils#ShiftWordInSpace(1)<CR>
-nnoremap <silent> <C-BS> :call genutils#ShiftWordInSpace(-1)<CR>
-nnoremap <silent> <leader>cw :call genutils#CenterWordInSpace()<CR>
-nnoremap <silent> <leader>va :call genutils#AlignWordWithWordInPreviousLine()<CR>
 
 " this will open a scratch buffer (requires 'scratch.vim')
 map <F12> <esc>:Scratch<cr>
 map <S-F12> <esc>:Sscratch<cr>
-
-" settings for git-vim
-"let g:git_statusline_surroundings = "[]"
-"let g:git_statusline_label = "Branch: "
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -114,9 +135,6 @@ endif
 " Only do this part when compiled with support for autocommands.
 if has("autocmd") && !exists("autocommands_loaded")
   let autocommands_loaded = 1
-
-  " Enable file type detection and load indent settings
-  filetype plugin indent on
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
@@ -139,7 +157,6 @@ if has("autocmd") && !exists("autocommands_loaded")
   autocmd BufRead Rakefile set filetype=ruby
 
   augroup END
-
 endif " has("autocmd")
 
 " Convenient command to see the difference between the current buffer and the
@@ -149,12 +166,6 @@ if !exists(":DiffOrig")
       command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
       \ | wincmd p | diffthis
 endif
-set backupdir=~/.cache/vim,~/.tmp,~/tmp,/var/tmp,/tmp " backup files
-set directory=~/.cache/vim,~/.tmp,~/tmp,/var/tmp,/tmp " swap files
-
-" Default browser
-command -bar -nargs=1 OpenURL :!opera <args> & 2> /dev/null
-
 
 " Set minium window size
 set wmh=0
@@ -168,16 +179,13 @@ endif
 nnoremap <c-n> <esc>:tabnext<cr>
 nnoremap <c-p> <esc>:tabprevious<cr>
 nnoremap <silent> <C-`> :tabnew<CR>
-" tip 199 (comments) - Open actual buffer in a tab and then close
 nmap t% :tabedit %<CR>
 nmap td :tabclose<CR>
-
 
 " Paste from X clipboard to vim
 vnoremap <C-C> "+y
 noremap <C-V> <ESC>"+gP
 inoremap <C-V> <ESC>"+gPi
-
 
 " Follow help links with enter
 nmap <buffer> <CR> <C-]>
@@ -197,26 +205,6 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
-
-"  move text and rehighlight -- vim tip_id=224
-"vnoremap > ><CR>gv
-"vnoremap < <<CR>gv
-
-set wildmode=longest,list,full
-"set wildmode=longest:full,full
-"set wildmenu
-" Tip 1386 [http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE]
-set completeopt=longest,menuone
-
-
-" Gist options
-"   * if you want to open browser after the post...
-"let g:gist_open_browser_after_post = 1
-"     # detect filetype if vim failed auto-detection.
-"let g:gist_detect_filetype = 1
-"let g:gist_browser_command = 'firefox %URL% &'
-
-
 " tip 908 -Quick generic option toggling http://vim.wikia.com/wiki/Quick_generic_option_toggling
 " Map key to toggle opt
 function MapToggle(key, opt)
@@ -224,35 +212,16 @@ function MapToggle(key, opt)
  exec 'nnoremap '.a:key.' '.cmd
  exec 'inoremap '.a:key." \<C-O>".cmd
 endfunction
-
 command -nargs=+ MapToggle call MapToggle(<f-args>)
 
 MapToggle <F2> paste
 MapToggle <F3> hlsearch
 MapToggle <F4> wrap
 MapToggle <F6> number
-
-" The following will make tabs and trailing spaces visible when requested(F10)
-set listchars=tab:»·,trail:⊔
-MapToggle <F10> list
-MapToggle <F11> scrollbind
-
-
 " Load NERD_tree
 map <F9> :NERDTreeToggle<CR>
-
-
-" Fuzzy Finder modified by Jamis Buck
-let g:fuzzy_ignore = "*.log,*.jpg,*.png,*.gif,*.swp,*.bak,*.tmp,*.zip,*.gz"
-let g:fuzzy_matching_limit = 40
-
-map <leader>t :FuzzyFinderTextMate<CR>
-map <leader>b :FuzzyFinderBuffer<CR>
-map <leader>i :FuzzyFinderFile<CR>
-
-" ACK integration
-set grepprg=ack-grep
-set grepformat=%f:%l:%m
+MapToggle <F10> list
+MapToggle <F11> scrollbind
 
 " Find searched_string in directories(...)
 function RailsGrep(searched_string,...)
@@ -269,94 +238,18 @@ endfunction
 " Find  definition in the project(models,controllers,helpers and lib)
 :command -nargs=1 Rgrepdef call RailsGrep("'def .*" . <q-args> . "'","app/models app/controllers app/helpers lib/ config/initializers vendor/plugins")
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Add the contents of this file to your ~/.vimrc file
-"
-"
-" Crucial setting, set to the dir in which your ruby projects reside
-
-"let base_dir = "/home/sigi/project/rails/" . expand("%")
-
-" Central additions (also add the functions below)
-
-":command RTlist call CtagAdder("app/models","app/controllers","app/views","public", "config", "lib")
-
-"map <F7> :RTlist<CR>
-
-" Optional, handy TagList settings
-
 :nnoremap <silent> <F8> :TlistToggle<CR>
-
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_Compact_Format = 1
 let Tlist_File_Fold_Auto_Close = 1
 let Tlist_Process_File_Always = 1
-
 let Tlist_Use_Right_Window = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_Enable_Fold_Column = 0
-
 let Tlist_WinWidth = 40
 let Tlist_Inc_WinWidth = 0
-
 let Tlist_Highlight_Tag = 1
-
 let Tlist_Sort_Type = 'name'
-
-
-" Function that gets the dirtrees for the provided dirs and feeds
-" them to the TlAddAddFiles function below
-
-"func CtagAdder(...)
-  "let curdir = getcwd()
-  "let index = 1
-  "let s:dir_list = ''
-  "while index <= a:0
-    "let s:dir_list = s:dir_list . TlGetDirs(a:{index})
-    "let index = index + 1
-  "endwhile
-  "call TlAddAddFiles(s:dir_list)
-  "wincmd p
-  "exec "normal ="
-  "wincmd p
-  "exec "cd " . curdir
-"endfunc
-
-" Adds *.rb, *.rhtml and *.css files to TagList from a given list
-" of dirs
-
-"func TlAddAddFiles(dir_list)
-  "let dirlist = a:dir_list
-  "let s:olddir = getcwd()
-  "while strlen(dirlist) > 0
-    "let curdir = substitute (dirlist, '|.*', "", "")
-    "let dirlist = substitute (dirlist, '[^|]*|\?', "", "")
-    "exec "cd " . g:base_dir
-    "exec "TlistAddFiles " . curdir . "/*.rb"
-    "exec "TlistAddFiles " . curdir . "/*.rhtml"
-    "exec "TlistAddFiles " . curdir . "/*.erb"
-    "exec "TlistAddFiles " . curdir . "/*.css"
-""    exec "TlistAddFiles " . curdir . "/*.js" "endwhile "exec "cd " . s:olddir "endfunc
-
-" Gets all dirs within a given dir, returns them in a string,
-" separated by '|''s
-
-"func TlGetDirs(start_dir)
-  "let s:olddir = getcwd()
-  "exec "cd " . g:base_dir . '/' . a:start_dir
-  "let dirlist = a:start_dir . '|'
-  "let dirlines = glob ('*')
-  "let dirlines = substitute (dirlines, "\n", '/', "g")
-  "while strlen(dirlines) > 0
-    "let curdir = substitute (dirlines, '/.*', "", "")
-    "let dirlines = substitute (dirlines, '[^/]*/\?', "", "")
-    "if isdirectory(g:base_dir . '/' . a:start_dir . '/' . curdir)
-      "let dirlist = dirlist . TlGetDirs(a:start_dir . '/' . curdir)
-    "endif
-  "endwhile
-  "exec "cd " . s:olddir
-  "return dirlist
-"endfunc
 
 nnoremap <F5> :call Ri(expand('<cword>'))<cr>
 vnoremap <F5> "ry:call Ri(@r)<cr>
@@ -369,9 +262,9 @@ vnoremap <F5> "ry:call Ri(@r)<cr>
 :nnoremap g{ {dap}p{
 
 " Tabularize mappings
-  nmap <leader>a= :Tabularize /=<CR>
-  vmap <leader>a= :Tabularize /=<CR>
-  nmap <leader>a> :Tabularize /=><CR>
-  vmap <leader>a> :Tabularize /=><CR>
-  nmap <leader>a: :Tabularize /:\zs<CR>
-  vmap <leader>a: :Tabularize /:\zs<CR>
+nmap <leader>a= :Tabularize /=<CR>
+vmap <leader>a= :Tabularize /=<CR>
+nmap <leader>a> :Tabularize /=><CR>
+vmap <leader>a> :Tabularize /=><CR>
+nmap <leader>a: :Tabularize /:\zs<CR>
+vmap <leader>a: :Tabularize /:\zs<CR>

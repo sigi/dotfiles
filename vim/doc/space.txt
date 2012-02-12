@@ -1,1 +1,0 @@
-../../../lib/vim/vim-space/doc/space.txt
