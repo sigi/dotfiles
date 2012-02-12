@@ -32,38 +32,46 @@ Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'tpope/vim-haml'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'spiiph/vim-space'
+Bundle 'leshill/vim-json'
+Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-bundler'
+Bundle 'pangloss/vim-javascript'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'vim-scripts/LustyJuggler'
+Bundle 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_guide_size  = 0 " the default, auto (full shiftwidth)
+let g:indent_guides_start_level = 2
 
 filetype plugin indent on
 
-" Enable 256 colors under X
+" The color scheme
 if $TERM == 'xterm' || $TERM == 'screen-256color-bce'
   set t_Co=256
 endif
-
-" set a nice color scheme
 if &t_Co == 256 || has('gui_running')
   colorscheme VibrantInkModified
 else
-" we use vividchalk for now in terminals until we fix VibrantInkModified
-  colorscheme vividchalk
+  colorscheme vividchalk  " our preferred low-color scheme
 endif
 
 if &t_Co > 2 || has('gui_running')
-    syntax on
+  syntax on
 endif
 
 " settings for GVim (makes .gvimrc mostly redundant)
 if has('gui_running')
-    set guicursor+=a:blinkon0	" turn off cursor blinking
-    set guifont=Andale\ Mono\ 10
-    set guioptions-=t           " disable tear-off menus
-    set guioptions-=m           " disable all menus
-    set guioptions-=T           " disable toolbar
+  set guicursor+=a:blinkon0	" turn off cursor blinking
+  set guifont=Andale\ Mono\ 10
+  set guioptions-=t           " disable tear-off menus
+  set guioptions-=m           " disable all menus
+  set guioptions-=T           " disable toolbar
+  let g:indent_guides_auto_colors = 1
 else
-    if &t_Co > 2
-        let &t_SI = "\<Esc>]12;orange\x7"
-        let &t_EI = "\<Esc>]12;red\x7"
-    endif
+  if &t_Co > 2
+    let &t_SI = "\<Esc>]12;orange\x7"
+    let &t_EI = "\<Esc>]12;red\x7"
+  endif
+  let g:indent_guides_auto_colors = 0
 endif
 
 set autoindent      " carry over indent level from current line
@@ -138,23 +146,23 @@ if has("autocmd") && !exists("autocommands_loaded")
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
-  au!
+    au!
 
-  " For all text files set 'textwidth'
-  autocmd FileType text setlocal textwidth=75
+    " For all text files set 'textwidth'
+    autocmd FileType text setlocal textwidth=75
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  " Also don't do it when the mark is in the first line, that is the default
-  " position when opening a file.
-  " Don't do it for git commit messages --sigi
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") && bufname("%") !~ "COMMIT_EDITMSG$" |
-    \   exe "normal! g`\"" |
-    \ endif
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    " Also don't do it when the mark is in the first line, that is the default
+    " position when opening a file.
+    " Don't do it for git commit messages --sigi
+    autocmd BufReadPost *
+          \ if line("'\"") > 1 && line("'\"") <= line("$") && bufname("%") !~ "COMMIT_EDITMSG$" |
+          \   exe "normal! g`\"" |
+          \ endif
 
-  autocmd BufRead Rakefile set filetype=ruby
+    autocmd BufRead Rakefile set filetype=ruby
 
   augroup END
 endif " has("autocmd")
@@ -163,8 +171,8 @@ endif " has("autocmd")
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
 if !exists(":DiffOrig")
-      command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-      \ | wincmd p | diffthis
+  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+        \ | wincmd p | diffthis
 endif
 
 " Set minium window size
@@ -208,9 +216,9 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 " tip 908 -Quick generic option toggling http://vim.wikia.com/wiki/Quick_generic_option_toggling
 " Map key to toggle opt
 function MapToggle(key, opt)
- let cmd = ':set '.a:opt.'! \| set '.a:opt."?\<CR>"
- exec 'nnoremap '.a:key.' '.cmd
- exec 'inoremap '.a:key." \<C-O>".cmd
+  let cmd = ':set '.a:opt.'! \| set '.a:opt."?\<CR>"
+  exec 'nnoremap '.a:key.' '.cmd
+  exec 'inoremap '.a:key." \<C-O>".cmd
 endfunction
 command -nargs=+ MapToggle call MapToggle(<f-args>)
 
