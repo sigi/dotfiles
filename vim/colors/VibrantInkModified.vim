@@ -152,3 +152,6 @@ highlight Folded                    guibg=#1100aa ctermbg=DarkBlue
 call s:hibg("Folded"                ,"#110077","DarkBlue",17)
 call s:hifg("Folded"                ,"#aaddee","LightCyan",63)
 highlight FoldColumn                none
+
+highlight IndentGuidesOdd           ctermbg=234
+highlight IndentGuidesEven          ctermbg=233
