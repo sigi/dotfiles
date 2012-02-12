@@ -29,7 +29,7 @@
   dt  = describe --tags
 [user]
   name = Frank Luithle
-  email = f.luithle@mgate.tv
+  email = frank@luithle.net
 [push]
   default = tracking
 [merge]
