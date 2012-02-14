@@ -121,6 +121,7 @@ set listchars=tab:»·,trail:⊔
 " ACK integration
 set grepprg=ack-grep
 set grepformat=%f:%l:%m
+set tags=./tags;/ " look for 'tags' in CWD, then traverse upwards
 
 let mapleader=","
 
