@@ -162,9 +162,6 @@ if has("autocmd") && !exists("autocommands_loaded")
           \ if line("'\"") > 1 && line("'\"") <= line("$") && bufname("%") !~ "COMMIT_EDITMSG$" |
           \   exe "normal! g`\"" |
           \ endif
-
-    autocmd BufRead Rakefile set filetype=ruby
-
   augroup END
 endif " has("autocmd")
 
