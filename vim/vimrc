@@ -62,9 +62,9 @@ endif
 if has('gui_running')
   set guicursor+=a:blinkon0	" turn off cursor blinking
   set guifont=Andale\ Mono\ 10
-  set guioptions-=t           " disable tear-off menus
-  set guioptions-=m           " disable all menus
-  set guioptions-=T           " disable toolbar
+  set guioptions-=t " disable tear-off menus
+  set guioptions-=m " disable all menus
+  set guioptions-=T " disable toolbar
   let g:indent_guides_auto_colors = 1
 else
   if &t_Co > 2
@@ -74,32 +74,32 @@ else
   let g:indent_guides_auto_colors = 0
 endif
 
-set autoindent      " carry over indent level from current line
-set autoread        " re-read changed files automatically
-set backspace=indent,eol,start   " allow backspacing over everything
-set clipboard+=unnamed           " yank into system clipboard
+set autoindent                 " carry over indent level from current line
+set autoread                   " re-read changed files automatically
+set backspace=indent,eol,start " allow backspacing over everything
+set clipboard+=unnamed         " yank into system clipboard
 set dictionary+=/usr/share/dict/words
-set expandtab       " always insert spaces instead of tabs
-set helpheight=15   " height of the help window when opened
-set hidden          " allow hidden buffers
-set history=250     " keep 50 lines of command line history
-set incsearch       " do incremental searching
-set keymodel=startsel,stopsel    " change visual behavior
-set laststatus=2    " always display a statusline
-set pumheight=15    " maximum height of completion popups
+set expandtab                 " always insert spaces instead of tabs
+set helpheight=15             " height of the help window when opened
+set hidden                    " allow hidden buffers
+set history=250               " keep 50 lines of command line history
+set incsearch                 " do incremental searching
+set keymodel=startsel,stopsel " change visual behavior
+set laststatus=2              " always display a statusline
+set pumheight=15              " maximum height of completion popups
 set scrolloff=3
 set selection=exclusive
-set shell=bash      " fish is not compatible, force bash
-set shiftwidth=2    " (auto)indent by that many
+set shell=bash                " fish is not compatible, force bash
+set shiftwidth=2              " (auto)indent by that many
 set softtabstop=4
-set shiftround      " round >< indenting to mod-shiftwidth
-set showbreak=▶     " wrap indicator in wrap mode
-set showcmd         " show incomplete commands
-set showmatch       " highlight matching bracket after inserting one
-set sidescroll=5    " horiz scrolls by 5 chars
-set sidescrolloff=5 " horiz keeps 5 chars to the right
-set smartindent     " indent smartly according to file type
-set smarttab        " soft tabs according to shiftwidth
+set shiftround                " round >< indenting to mod-shiftwidth
+set showbreak=▶               " wrap indicator in wrap mode
+set showcmd                   " show incomplete commands
+set showmatch                 " highlight matching bracket after inserting one
+set sidescroll=5              " horiz scrolls by 5 chars
+set sidescrolloff=5           " horiz keeps 5 chars to the right
+set smartindent               " indent smartly according to file type
+set smarttab                  " soft tabs according to shiftwidth
 set statusline=(%n)\ %F%1*%m%*%r%h%w\ [%{&ff}]\ [%Y]\ %{fugitive#statusline()}%=%l,%c%V\ [%p%%]
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=4       " a tab is considered 4 spaces wide
@@ -169,8 +169,7 @@ endif " has("autocmd")
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
 if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-        \ | wincmd p | diffthis
+  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 endif
 
 " Set minium window size
