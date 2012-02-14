@@ -1,3 +1,4 @@
+URxvt.termName:        rxvt-unicode
 URxvt.background:      black
 URxvt.foreground:      grey80
 ! as suggested in urxvt(7)

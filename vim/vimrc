@@ -45,7 +45,7 @@ let g:indent_guides_start_level = 2
 filetype plugin indent on
 
 " The color scheme
-if $TERM == 'xterm' || $TERM == 'screen-256color-bce'
+if $TERM == 'xterm' || $TERM == 'screen-256color-bce' || $TERM == 'rxvt-unicode'
   set t_Co=256
 endif
 if &t_Co == 256 || has('gui_running')
